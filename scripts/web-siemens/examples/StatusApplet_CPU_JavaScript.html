@@ -1,0 +1,50 @@
+<HTML><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><TITLE>S7StatusApplet and JavaScript</TITLE>
+
+<script language="JavaScript">
+<!--
+  function setRackSlot(rack, slot) {
+  	document.State.setRack(rack);
+  	document.State.setSlot(slot);
+  }
+//-->
+</script>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER>
+	<H2>Accessing S7StatusApplet by JavaScript</H2>
+	
+<FORM NAME="config">
+	<font size=+0>Please setup the appropriate rack and slot values of your S7-CPU or your S7-CP:</font><br> <br>   
+	<font size=+1>Rack/Slot: </font>
+	<INPUT TYPE="text" SIZE="2" NAME="rack" VALUE="0">
+	<INPUT TYPE="text" SIZE="2" NAME="slot" VALUE="3">
+	<INPUT TYPE="button" VALUE="Apply"
+		onClick="setRackSlot(document.config.rack.value, document.config.slot.value)">
+</FORM>
+
+<br>
+<font size=+0>The following applet shows you the status visually:</font><br> <br>   
+<APPLET CODE="de.siemens.simaticnet.itcp.applets.S7StatusApplet.class" CODEBASE="/applets/"
+	ARCHIVE="s7applets.jar, s7api.jar" WIDTH="68" HEIGHT="40" NAME="State">
+	<PARAM name="RACK" value= 0>
+	<PARAM name="SLOT" value= 3>
+	<PARAM name="CYCLETIME" value= 5000>
+	<PARAM name="BACKGROUNDCOLOR" value=0xC0C0C0>
+</APPLET>
+
+<br>
+
+<FORM NAME="form1">
+	<font size=+0>Press the button to get the status by JavaScript:</font><br> <br>   
+	<INPUT TYPE="text" SIZE="20" NAME="str">
+	<INPUT TYPE="button" VALUE="Get status"
+		onClick="document.form1.str.value = document.State.getState()">
+</FORM>
+
+</CENTER>
+</BODY>
+</HTML>

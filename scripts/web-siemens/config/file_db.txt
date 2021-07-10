@@ -1,0 +1,32 @@
+# CONFIGURATION FILE for file transfer between an FTP client of a remote system
+# and an S7-CPU using the FTP server of the IT-CP
+
+# This is an ASCII file and may be edited.
+# This file must be located in the directory "/config" of the file system
+# of the IT-CP. Its file name must be "file_db.txt" (all lowercase).
+
+# All lines that do not begin with "cpu" (lowercase AND no leading blanks) 
+# are interpreted as comment.
+# Maximum length per line is 256 characters.
+# Delimiters are (one or more) blanks or tabs.
+
+# The following table defines the rack and slot of the CPU(s).
+# Definitions of "cpu1", "cpu2", "cpu3" and "cpu4" are allowed.
+
+# CPU      Rack      Slot 
+# -----------------------------
+# cpu1        0         4
+# cpu2        0         7
+
+# The following table defines pairs of file names and file DBs in the CPU.
+# The maximum number of pairs is 100. 
+# The file name must begin with "cpuX" (where X = 1, 2, 3 or 4).
+# Note that "cpuX" must be defined in the table above!
+# The file name must consist of the characters "a-z", "A-Z", "0-9", "_" or "."
+# It must not include a path. The maximum length of a file name is 64 characters. 
+
+# File Name            File DB Number
+# ----------------------------------------
+# cpu1db20                        20
+# cpu1db35                        35
+# cpu2_test.dat                    5

@@ -1,0 +1,89 @@
+<HTML><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>S7Put- and S7GetApplet and JavaScript</TITLE>
+
+<script language="JavaScript">
+<!--
+  function setRackSlot(rack, slot) {
+  	document.Get.setRack(rack);
+  	document.Get.setSlot(slot);
+  	document.Put.setRack(rack);
+  	document.Put.setSlot(slot);
+  }
+//-->
+</script>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER>
+	<H2>Accessing S7Put- and S7GetApplet by JavaScript</H2>
+	<font size=+0>This page uses the S7BeanAPI with fixed language settings.</font>
+
+<FORM NAME="config">
+	<font size=+0>Please setup the appropriate rack and slot values of your S7-CPU:</font><br><br>   
+	<font size=+1>Rack/Slot: </font>
+	<INPUT TYPE="text" SIZE="2" NAME="rack" VALUE="0">
+	<INPUT TYPE="text" SIZE="2" NAME="slot" VALUE="3">
+	<INPUT TYPE="button" VALUE="Apply"
+		onClick="setRackSlot(document.config.rack.value, document.config.slot.value)">
+</FORM>
+
+<font size=+0>The following applets lets you put or get a value:</font><br>  
+<font size=+0>(double click on the applets to configure their settings)</font><br><br>   
+<APPLET CODE="de.siemens.simaticnet.itcp.applets.S7GetApplet.class" CODEBASE="/applets/"
+	ARCHIVE="s7applets.jar, s7api.jar" WIDTH="200" HEIGHT="160" NAME="Get">
+	<PARAM name="RACK" value= 0>
+	<PARAM name="SLOT" value= 3>
+	<PARAM name="CYCLETIME" value= 10000>
+	<PARAM name="BACKGROUNDCOLOR" value=0xC0C0C0>
+	<PARAM name="LANGUAGE" value="en">
+	<PARAM name="DEBUGLEVEL" value=3>
+	<PARAM name="DISPLAY" value="CLTacho">
+	<PARAM name="MINVAL" value=0>
+	<PARAM name="MAXVAL" value=100>
+	<PARAM name="EDIT" value="true">
+
+	<PARAM name="VARTYPE"     value=4>
+	<PARAM name="VARCNT"      value=1>
+	<PARAM name="VARAREA"     value=131>
+	<PARAM name="VARSUBAREA"  value=0>
+	<PARAM name="VAROFFSET"   value=100>
+	<PARAM name="FORMAT"      value="MW100 = \H\H ">
+</APPLET>
+<br>
+<br>
+<APPLET CODE="de.siemens.simaticnet.itcp.applets.S7PutApplet.class" CODEBASE="/applets/"
+	ARCHIVE="s7applets.jar, s7api.jar" WIDTH="420" HEIGHT="45" NAME="Put">
+	<PARAM name="RACK" value= 0>
+	<PARAM name="SLOT" value= 3>
+	<PARAM name="BACKGROUNDCOLOR" value=0xC0C0C0>
+	<PARAM name="LANGUAGE" value="en">
+	<PARAM name="DEBUGLEVEL" value=3>
+	<PARAM name="EDIT" value="true">
+
+	<PARAM name="VARNUM"     value="1">
+	<PARAM name="VARNAME1"    value="MW100">
+	<PARAM name="VARTYPE1"    value="4">
+	<PARAM name="VARAREA1"    value="131">
+	<PARAM name="VARSUBAREA1" value="0">
+	<PARAM name="VAROFFSET1"  value="100">
+	<PARAM name="VARFORMAT1"  value="W">
+</APPLET>
+
+<br>
+
+<FORM NAME="form1">
+	<font size=+0>Press the appropriate button to put or get the value by JavaScript:</font><br> <br>   
+	<INPUT TYPE="text" SIZE="20" NAME="inp">
+	<INPUT TYPE="button" VALUE="Put value"
+		onClick="document.Put.setValue(document.form1.inp.value)"> <BR>
+	<INPUT TYPE="text" SIZE="20" NAME="out">
+	<INPUT TYPE="button" VALUE="Get value"
+		onClick="document.form1.out.value = document.Get.getValue()">
+</FORM>
+
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,5 @@
+2021-06-24 18:04:49,342 - mininet - INFO - *** Stopping 1 controllers
+
+2021-06-24 18:04:49,342 - mininet - INFO - c0 
+2021-06-24 18:04:49,343 - mininet - DEBUG - *** c0 : ('kill %controller',)
+

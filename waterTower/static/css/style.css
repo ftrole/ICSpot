@@ -1,0 +1,123 @@
+h1, h2, h3, p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 3.4em;
+	padding: 0.3em;
+	margin: 0;
+}
+
+h2 {
+	color: #595959;
+	letter-spacing: 0.4em;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#html {
+	padding: 0em;
+	margin: 0em;
+	height: 100%;
+}
+
+#logo {
+	height: 2.7em;
+	float: left;
+}
+
+.title {
+	text-align: left;
+	padding-top: 0.5em;
+	padding-left: 9em;
+	margin: 0;
+}
+
+#top {
+	background-color: #bfbfbf;
+	text-align: center;
+	padding-top: 0em;
+	padding-bottom: 0.1em;
+	margin: 0em;
+}
+
+body {
+	background-color: #e3e3e3;
+	paddding: 0;
+	margin: 0;
+	position: relative;
+	min-height: 97vh;
+}
+
+#content {
+	min-height: 45em;
+}
+
+#tank {
+	position: absolute;
+	top: 11em;
+	left: 30em;
+	width: 20em;
+}
+
+#pump1 {
+	width: 12em;
+	top: 32em;
+	left: 27em;
+	position: absolute;
+}
+
+#pump2 {
+	width: 12em;
+	top: 32em;
+	left: 40em;
+	position: absolute;
+}
+
+#waterLevel {
+	height: 5em;
+	top: 21em;
+	left: 55em;
+	position: absolute;
+	padding: 0.3em;
+	background-color: #ffffff;
+}
+
+#inflow {
+	top: 35em;
+	left: 8em;
+	position: absolute;
+	padding: 0.3em;
+	background-color: #ffffff;
+}
+
+#outflow {
+	top: 35em;
+	left: 54em;
+	position: absolute;
+	padding: 0.3em;
+	background-color: #ffffff;
+}
+
+footer {
+	text-align: center;
+	background-color: #424242;
+	padding: 0em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin: 0em; 
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+}
+
+footer > p {
+	color: whitesmoke;
+}
+
+a {
+	color: #c7feff;
+}

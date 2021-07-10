@@ -1,0 +1,49 @@
+<HTML><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><TITLE>S7IdentApplet and JavaScript</TITLE>
+
+<script language="JavaScript">
+<!--
+  function setRackSlot(rack, slot) {
+  	document.Ident.setRack(rack);
+  	document.Ident.setSlot(slot);
+  }
+//-->
+</script>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER>
+	<H2>Accessing S7IdentApplet by JavaScript</H2>
+
+<FORM NAME="config">
+	<font size=+0>Please setup the appropriate rack and slot values of your S7-CPU or your S7-CP:</font><br> <br>   
+	<font size=+1>Rack/Slot: </font>
+	<INPUT TYPE="text" SIZE="2" NAME="rack" VALUE="0">
+	<INPUT TYPE="text" SIZE="2" NAME="slot" VALUE="3">
+	<INPUT TYPE="button" VALUE="Apply"
+	   onClick="setRackSlot(document.config.rack.value, document.config.slot.value)">
+</FORM>
+
+<br>
+<font size=+0>The following applet shows you the identification of your S7-CPU or S7-CP:</font><br> <br>   
+<APPLET CODE="de.siemens.simaticnet.itcp.applets.S7IdentApplet.class" CODEBASE="/applets/"
+	ARCHIVE="s7applets.jar, s7api.jar" WIDTH="174" HEIGHT="34" NAME="Ident">
+	<PARAM name="RACK" value= 0>
+	<PARAM name="SLOT" value= 3>
+	<PARAM name="BACKGROUNDCOLOR" value=0xC0C0C0>
+</APPLET>
+
+<br>
+
+<FORM NAME="form1">
+	<font size=+0>Press the button to get the identification by JavaScript:</font><br> <br>   
+	<INPUT TYPE="text" SIZE="20" NAME="str">
+	<INPUT TYPE="button" VALUE="Get identification"
+		onClick="document.form1.str.value = document.Ident.getIdent()">
+</FORM>
+
+</CENTER>
+</BODY>
+</HTML>

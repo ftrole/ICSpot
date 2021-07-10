@@ -1,0 +1,22 @@
+<HTML><HEAD><TITLE>CP x43-1 IT Server Information</TITLE></HEAD><BODY BGCOLOR="#FFFFFF"><FONT FACE="ARIEL"><CENTER><BR><H1>Server Information</H1>
+<TABLE BORDER=2><TR><TD><B>Device-Name: </B></TD><TD>CP343-1 IT, 6GK7 343-1GX20-0XE0</TD></TR>
+<TR><TD><B>Firmware-Version: </B></TD><TD>V1.1.4</TD></TR>
+<TR><TD><B>HTTP-Server-Version: </B></TD><TD>HTTP-Server V1.27</TD></TR></TABLE>
+<BR><H1>Filesystem Information</H1>
+<TABLE BORDER=2><TR>
+<TD><B>Filesytem Type</B></TD><TD><B>Mount Point</B></TD><TD><B>Total Bytes</B></TD><TD><B>Free Bytes</B></TD><TD><B>Total Inodes</B></TD><TD><B>Free Inodes</B></TD><TD><B>Bad Blocks</B></TD></TR><TR><TD><B>Nonvolatile FLASH Filesystem</B></TD><TD><A HREF="/__FSys_Root">/</A></TD><TD>31,23 MB (32754688 Bytes)</TD>
+<TD>30,59 MB (32082944 Bytes)</TD>
+<TD>8184</TD>
+<TD>8158</TD>
+<TD>2 (32768 Bytes)</TD></TR>
+<TR><TD><B>Volatile RAM Filesystem</B></TD><TD><A HREF="/ram">/ram</A></TD><TD>30,39 MB (31866368 Bytes)</TD>
+<TD>30,38 MB (31865344 Bytes)</TD>
+<TD>16383</TD>
+<TD>16382</TD>
+<TD>-</TD></TR>
+<TR><TD><B>ROM Filesystem</B></TD><TD><A HREF="/SYS">/SYS</A></TD><TD>0,49 MB (520704 Bytes)</TD>
+<TD>read only (0 Bytes)</TD>
+<TD>24</TD>
+<TD>0</TD>
+<TD>-</TD></TR></TABLE>
+</CENTER></FONT></BODY></HTML>
