@@ -71,6 +71,12 @@ class RawWaterTank(Tank):
             # compute new water_level
             new_level = water_volume / self.section
 
+            # adjust level not to break the simulation in case of attack
+            if new_level >= 1.15:
+                new_level = 1.1
+            if new_level <= 0.05:
+                new_level = 0.1
+
             # level cannot be negative
             if new_level <= 0.0:
                 new_level = 0.0
