@@ -7,15 +7,15 @@ With ICSpot an attacker can interact with the operations involved in the control
 
 The figure above shows the general architecture of our honeypot and how the different components interact between each others. 
 
-# Installation
+## Installation
 
-## Requirements 
+### Requirements 
 - Operating system: tested on ubuntu 18.04 and 20.04
 - Python 2 for Mininet
 - Python 3 for the HMI web app
 
 
-## Installation process
+### Installation process
 1. Install [Honeyd](https://github.com/DataSoft/Honeyd) and all its dependencies.
 1. Install farpd
 
@@ -53,3 +53,10 @@ A useful tool that you can use to achieve this result is farpd:
 `sudo apt install farpd`
 
 `sudo farpd -d -i INTERFACE <IP>`
+
+## Team
+Francesco Trolese (francesco.trolese.1@studenti.unipd.it)  
+Federico Turrin (turrin@math.unipd.it)
+
+
+We are members of [SPRITZ Security and Privacy Research Group](https://spritz.math.unipd.it/) at University of Padua, Italy.
