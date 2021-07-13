@@ -3,6 +3,10 @@ A high interaction ICS honeypot that simulates a Siemens PLC and provides phisic
 
 With ICSpot an attacker can interact with the operations involved in the control process of the water level inside a tank.
 
+<img src="./docs/imgs/ICSpot_schema.png" alt="ICS architecture schema" />
+
+The figure above shows the general architecture of our honeypot and how the different components interact between each others. 
+
 # Installation
 
 ## Requirements 
