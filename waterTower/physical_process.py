@@ -16,6 +16,7 @@ from utils import LIT_101_M, RWT_INIT_LEVEL
 from utils import STATE, PP_PERIOD_SEC, PP_PERIOD_HOURS
 
 import time
+import pandas as pd
 
 
 # SPHINX_SWAT_TUTORIAL TAGS(
@@ -41,6 +42,9 @@ class RawWaterTank(Tank):
     def main_loop(self):
 
         count = 0
+        columns = ['Time', 'MV001', 'P201', 'LIT101', 'FIT101', 'FIT201']
+        df = pd.DataFrame(columns=columns)
+        timestamp=0
         while True: # Do not stop the flow of water 
             print("DEBUG COUNT" + str(count))
 
@@ -95,8 +99,11 @@ class RawWaterTank(Tank):
                 print('DEBUG RawWaterTank below LL count: ', count)
                 #break
 
+            df = df.append(pd.Series([timestamp, self.get(MV101), self.get(P101), self.get(LIT101), self.get(LIT101), self.get(FIT101), self.get(FIT201)], index=df.columns), ignore_index=True)
+            df.to_csv('physical_log.csv', index=False)
             count += 1
             time.sleep(PP_PERIOD_SEC)
+            timestamp+=PP_PERIOD_SEC
 
 
 if __name__ == '__main__':
