@@ -1,5 +1,5 @@
 # ICSpot
-A high interaction ICS honeypot that simulates a Siemens PLC and provides phisical process simulation.
+A high interaction ICS honeypot that simulates a Siemens PLC and provides physical process simulation.
 
 With ICSpot an attacker can interact with the operations involved in the control process of the water level inside a tank.
 
@@ -31,9 +31,9 @@ has to be on the same network as the host interface where honeyd will listen.
     1. install [Mininet](https://github.com/mininet/mininet) and [MiniCPS](https://github.com/scy-phy/minicps)
     1. follow the instruction in the [waterTower folder](./waterTower/README.md) to start the simulation and the HMI web application
 
-1. Install the modified Snap7 library [libsnap7.so](https://github.com/ftrole/honeySiemens/blob/snap7/snap7/build/bin/x86_64-linux/libsnap7.so-300) in:     `/usr/lib/libsnap7.so`
+1. Install the modified Snap7 library [libsnap7.so](./snap7/build/bin/x86_64-linux/libsnap7.so-300) in:     `/usr/lib/libsnap7.so`
 
-1. Execute the s7comm server (you can find it [here](https://github.com/ftrole/honeySiemens/blob/snap7/snap7/examples/cpp/x86_64-linux/server) or compile it by yourself by using  `make` inside the folder of your OS.  
+1. Execute the s7comm server (you can find it [here](./snap7/examples/cpp/x86_64-linux/server) or compile it by yourself by using  `make` inside the folder of your OS.  
 
     `sudo ./server 127.0.0.1`
 
