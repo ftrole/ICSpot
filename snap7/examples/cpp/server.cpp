@@ -76,7 +76,7 @@ void S7API EventCallBack(void *usrPtr, PSrvEvent PEvent, int Size)
 
 			sqlite3 * db;
 			int exit = 0;
-			exit = sqlite3_open("/home/francesco/Desktop/honeySiemens/waterTower/swat_s1_db.sqlite", &db);
+			exit = sqlite3_open("../../../../waterTower/swat_s1_db.sqlite", &db);
 
 			if (exit)
 			{
@@ -115,7 +115,7 @@ void S7API EventCallBack(void *usrPtr, PSrvEvent PEvent, int Size)
 
 			sqlite3 * db;
 			int exit = 0;
-			exit = sqlite3_open("/home/francesco/Desktop/honeySiemens/waterTower/swat_s1_db.sqlite", &db);
+			exit = sqlite3_open("../../../../waterTower/swat_s1_db.sqlite", &db);
 
 			if (exit)
 			{
@@ -209,7 +209,7 @@ void S7API ReadEventCallBack(void *usrPtr, PSrvEvent PEvent, int Size)
 		{
 			sqlite3 * db;
 			int exit = 0;
-			exit = sqlite3_open("/home/francesco/Desktop/honeySiemens/waterTower/swat_s1_db.sqlite", &db);
+			exit = sqlite3_open("../../../../waterTower/swat_s1_db.sqlite", &db);
 
 			if (exit)
 			{
@@ -278,7 +278,7 @@ void S7API ReadEventCallBack(void *usrPtr, PSrvEvent PEvent, int Size)
 		{
 			sqlite3 * db;
 			int exit = 0;
-			exit = sqlite3_open("/home/francesco/Desktop/honeySiemens/waterTower/swat_s1_db.sqlite", &db);
+			exit = sqlite3_open("../../../../waterTower/swat_s1_db.sqlite", &db);
 
 			if (exit)
 			{

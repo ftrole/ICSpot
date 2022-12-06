@@ -11,7 +11,7 @@ from topo import SwatTopo
 import sys
 
 
-class waterTowerCPS(MiniCPS):
+class SwatS1CPS(MiniCPS):
 
     """Main container used to run the simulation."""
 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     topo = SwatTopo()
     net = Mininet(topo=topo)
 
-    watertower_cps = waterTowerCPS(
-        name='waterTower',
+    swat_s1_cps = SwatS1CPS(
+        name='swat_s1',
         net=net)
