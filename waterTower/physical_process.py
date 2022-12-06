@@ -99,7 +99,7 @@ class RawWaterTank(Tank):
                 print('DEBUG RawWaterTank below LL count: ', count)
                 #break
 
-            df = df.append(pd.Series([timestamp, self.get(MV101), self.get(P101), self.get(LIT101), self.get(LIT101), self.get(FIT101), self.get(FIT201)], index=df.columns), ignore_index=True)
+            df = df.append(pd.Series([timestamp, self.get(MV001), self.get(P201), self.get(LIT101), self.get(FIT101), self.get(FIT201)], index=df.columns), ignore_index=True)
             df.to_csv('physical_log.csv', index=False)
             count += 1
             time.sleep(PP_PERIOD_SEC)

@@ -12,8 +12,11 @@ PYTHON3s = sudo python3
 # waterTower {{{1
 
 watertower:
-	cd waterTower; $(PYTHON2) init.py; $(PYTHON2s) run.py & cd ..
-	cd waterTower; $(PYTHON3) scada.py & cd ..
+	cd waterTower; $(PYTHON2s) init.py; cd .. 
+	sudo gnome-terminal --window-with-profile=rootshell -- sh -c 'cd waterTower; sudo python2 run.py'
+	sleep 3
+	sudo gnome-terminal --window-with-profile=rootshell -- sh -c 'cd waterTower; sudo python3 scada.py; exec bash'
+	sleep 3
 	xdg-open http://127.0.0.1:5000/
 
 
@@ -22,7 +25,7 @@ watertower:
 clean:
 	sudo pkill -f -u root $(PYTHON2)" -m cpppo.server.enip"
 	sudo mn -c
-	cd waterTower; sudo rm swat_s1_db.sqlite
+	cd waterTower; sudo rm swat_s1_db.sqlite; sudo rm physical_log.csv; sudo rm -f logs/*.log; sudo rm -f minicps/*.pyc; rm -f minicps/*,cover
 	sudo fuser -k 6653/tcp
 
 # }}}

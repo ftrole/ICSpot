@@ -63,7 +63,7 @@ $(document).ready(function(){
                 <h3> Volume: ` +  number.toString() +  " liters</h3> </div>";
         if (msg.MV001 == 1){
             css+=`<div id="inflow" >   
-                <h3> Inflow: ` +  (msg.FIT101*16.67).toFixed(2).toString() +  ` l/min</h3> </div>`;
+                <h3> Inflow: ` +  (msg.FIT101*16.67 + ((Math.random() * (0.1 - 1.0) + 0.1))).toFixed(2).toString() +  ` l/min</h3> </div>`;
         }
         if (msg.P201 == 1){
             css+=`<div id="outflow" >   
