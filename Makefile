@@ -1,0 +1,28 @@
+# MiniCPS Makefile
+
+# VARIABLES {{{1
+
+MININET = sudo mn
+
+PYTHON2 = python2
+PYTHON3 = python3
+PYTHON2s = sudo python2
+PYTHON3s = sudo python3
+
+# waterTower {{{1
+
+watertower:
+	cd waterTower; $(PYTHON2) init.py; $(PYTHON2s) run.py & cd ..
+	cd waterTower; $(PYTHON3) scada.py & cd ..
+	xdg-open http://127.0.0.1:5000/
+
+
+# CLEAN {{{1
+
+clean:
+	sudo pkill -f -u root $(PYTHON2)" -m cpppo.server.enip"
+	sudo mn -c
+	cd waterTower; sudo rm swat_s1_db.sqlite
+	sudo fuser -k 6653/tcp
+
+# }}}

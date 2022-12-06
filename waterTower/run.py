@@ -1,5 +1,5 @@
 """
-swat-s1 run.py
+waterTower run.py
 """
 
 from mininet.net import Mininet
@@ -8,8 +8,10 @@ from minicps.mcps import MiniCPS
 
 from topo import SwatTopo
 
+import sys
 
-class SwatS1CPS(MiniCPS):
+
+class waterTowerCPS(MiniCPS):
 
     """Main container used to run the simulation."""
 
@@ -23,7 +25,12 @@ class SwatS1CPS(MiniCPS):
         net.pingAll()
 
         # start devices
-        self.net.get('plc0', 'plc1', 'plc2', 's1')
+        plc0, plc1, plc2, s1 = self.net.get(
+            'plc0', 'plc1', 'plc2', 's1')
+
+        plc2.cmd('python2 plc2.py &')
+        plc1.cmd('python2 plc1.py &')
+        s1.cmd('python2 physical_process.py &')
 
         print("Devices started")
 
@@ -37,6 +44,6 @@ if __name__ == "__main__":
     topo = SwatTopo()
     net = Mininet(topo=topo)
 
-    swat_s1_cps = SwatS1CPS(
-        name='swat_s1',
+    watertower_cps = waterTowerCPS(
+        name='waterTower',
         net=net)

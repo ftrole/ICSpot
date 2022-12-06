@@ -41,7 +41,7 @@ has to be on the same network as the host interface where honeyd will listen.
 
 1. From inside the repository, run: 
 
-    `sudo honeyd -d -p nmap-os-db -i INTERFACE -l honeyd.log -f honeyd.conf IP –disable-webserver`
+    `sudo honeyd -d -p nmap-os-db -i INTERFACE -l honeyd.log -f honeyd.conf IP --disable-webserver`
 
     where IP is the same IP address of Honeyd configuration file and INTERFACE is the interface of the host machine
 
