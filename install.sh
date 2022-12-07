@@ -15,7 +15,7 @@ sleep 3
 sudo apt update
 
 # Installing necessary packages
-sudo apt install -y git python2.7 python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools
+sudo apt install -y git python2.7 python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal
 
 # Install farpd
 sudo apt install -y farpd
