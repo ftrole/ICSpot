@@ -2,10 +2,10 @@ echo "Enter the target IP: "
 read IP
 
 # generic scan by IP
-sudo nmap $IP
+# sudo nmap $IP
 
 # SERVICE/VERSION DETECTION
-sudo nmap -sV $IP
+# sudo nmap -sV $IP
 
 # arp ping may be a problem due to the default timeout in namp (honeypot reply may be slow). This command should bypass the problem 
 sudo nmap -sS -sU -Pn --disable-arp-ping -p 1-1024 -T4 -A -v $IP 
