@@ -11,8 +11,7 @@
 
 import re, sys, time, os
 
-webroot = "/home/ubuntu/Desktop/CSH_20060623/cernscadahoneynet/files/scripts/web-siemens"
-#webroot = "/home/ubuntu/Desktop/CSH_20060623/cernscadahoneynet/files/scripts/web-siemens"
+webroot = "/absolute/path/to/web-siemens"
 
 class HTTPSim:
   def run(self):

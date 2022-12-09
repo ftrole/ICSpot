@@ -38,7 +38,7 @@ sudo apt install -y libevent-dev libdumbnet-dev libpcap-dev libpcre3-dev libedit
 make
 sudo make install
 
-# MiniCPSc
+# MiniCPS
 cd ~
 git clone --depth 1 https://github.com/afmurillo/minicps.git || git -C minicps pull
 cd minicps
@@ -57,6 +57,10 @@ sudo pip3 install python-socketio==4.6.0
 sudo pip3 install eventlet
 sudo pip3 install gevent
 sudo pip3 install mininet
+
+# create log and make it modifiable
+touch honeyd.log
+sudo chmod 777 honeyd.log
 
 # Installing Python2 dependencies
 sudo pip2 install pandas
