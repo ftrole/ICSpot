@@ -4,18 +4,16 @@
 
 MININET = sudo mn
 
-PYTHON2 = python2
 PYTHON3 = python3
-PYTHON2s = sudo python2
 PYTHON3s = sudo python3
 
 # waterTower {{{1
 
 watertower:
-	cd waterTower; $(PYTHON2s) init.py; cd .. 
-	sudo gnome-terminal --window-with-profile=rootshell -- sh -c 'cd waterTower; sudo python2 run.py'
+	cd waterTower; $(PYTHON3s) init.py; cd .. 
+	sudo gnome-terminal -- sh -c 'cd waterTower; sudo python3 run.py'
 	sleep 5
-	sudo gnome-terminal --window-with-profile=rootshell -- sh -c 'cd waterTower; sudo python3 scada.py; exec bash'
+	sudo gnome-terminal -- sh -c 'cd waterTower; sudo python3 scada.py; exec bash'
 	sleep 5
 	xdg-open http://127.0.0.1:5000/
 
