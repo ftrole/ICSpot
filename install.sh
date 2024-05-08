@@ -15,7 +15,7 @@ sleep 3
 sudo apt update
 s
 # Installing necessary packages
-sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal
+sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal mininet dbus-x11
 
 # Install farpd
 sudo apt install -y farpd

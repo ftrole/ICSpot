@@ -67,7 +67,7 @@ def test_connect():
     print('Client connected')
 
     #Start the random number generator thread only if the thread has not been started before.
-    if not thread.isAlive():
+    if not thread.is_alive():
         print("Starting Thread")
         thread = socketio.start_background_task(waterLevels)
 
