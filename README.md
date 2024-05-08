@@ -22,6 +22,7 @@ Installation is quite articulated, so brace yourself.
 1. Clone this repository: `git clone https://github.com/ftrole/ICSpot.git`
 2. To install ICSpot and all its dependencies, run `sh install.sh`
 3. Fix the paths in: 
+    
     [honeyd.conf](./honeyd.conf) so they match the absolute path of the `ICSpot/scripts` folder in your file system (lines 23-27);
 
     [honeyd-http-siemens.py](./scripts/honeyd-http-siemens.py) so it matches the absolute path of the `ICSpot/scripts/web-siemens` folder in your file system (line 14).

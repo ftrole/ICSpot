@@ -13,7 +13,7 @@ sleep 3
 
 # Update apt
 sudo apt update
-
+s
 # Installing necessary packages
 sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal
 
@@ -33,17 +33,11 @@ sudo apt install -y libevent-dev libdumbnet-dev libpcap-dev libpcre3-dev libedit
 make
 sudo make install
 
-# MiniCPS
-cd ~
-git clone --depth 1 https://github.com/scy-phy/minicps.git || git -C minicps pull
-cd minicps
-sudo python3 -m pip install .
-
 # Mininet from source
-cd ~
-git clone --depth 1 -b 2.3.1b4 https://github.com/mininet/mininet.git || git -C mininet pull
-cd mininet
-sudo PYTHON=python3 ./util/install.sh -fnv
+#cd ~
+#git clone --depth 1 -b 2.3.1b4 https://github.com/mininet/mininet.git || git -C mininet pull
+#cd mininet
+#sudo PYTHON=python3 ./util/install.sh -fnv
 
 # Installing Python3 dependencies
 sudo pip3 install Flask-SocketIO==4.3.1
