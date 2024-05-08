@@ -22,8 +22,9 @@ Installation is quite articulated, so brace yourself.
 1. Clone this repository: `git clone https://github.com/ftrole/ICSpot.git`
 2. To install ICSpot and all its dependencies, run `sh install.sh`
 3. Fix the paths in: 
-    [honeyd.conf](./honeyd.conf) so they match the absolute path of the `ICSpot/scripts` folder in your file system;
-    [honeyd-http-siemens.py](./scripts/honeyd-http-siemens.py) so it matches the absolute path of the `ICSpot/scripts/web-siemens` folder in your file system.
+    [honeyd.conf](./honeyd.conf) so they match the absolute path of the `ICSpot/scripts` folder in your file system (lines 23-27);
+
+    [honeyd-http-siemens.py](./scripts/honeyd-http-siemens.py) so it matches the absolute path of the `ICSpot/scripts/web-siemens` folder in your file system (line 14).
 
 4. Pick an IP address that ICSpot will use and replace the IP filed in [honeyd.conf](./honeyd.conf) with your chosen address. Note that the IP address has to be on the *same subnet* of the listening port and should *not* be currently in use.
 
@@ -45,7 +46,7 @@ Installation is quite articulated, so brace yourself.
 
     Execute: `sudo ./snap7/examples/cpp/x86_64-linux/server 127.0.0.1`
 
-    *N.B.* it may be necessary to fix the sqlite3 db file path inside [server.cpp](./snap7/examples/cpp/server.cpp)
+    *N.B.* it may be necessary to fix the sqlite3 db file path inside [server.cpp](./snap7/examples/cpp/server.cpp) (line 79)
 
 8. From inside the repository, run: 
 
@@ -91,7 +92,7 @@ For the logging part we used two publicly available tools.
 
 ## Team
 Francesco Trolese (francesco.trolese.1@studenti.unipd.it)  
-Federico Turrin (turrin@math.unipd.it)
+Federico Turrin (federico.turrin94@gmail.com)
 
 We are members of [SPRITZ Security and Privacy Research Group](https://spritz.math.unipd.it/) at the University of Padua, Italy.
 

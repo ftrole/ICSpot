@@ -15,18 +15,13 @@ sleep 3
 sudo apt update
 
 # Installing necessary packages
-sudo apt install -y git python2.7 python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal
+sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal
 
 # Install farpd
 sudo apt install -y farpd
 
-# Get python2 pip
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-sudo python2 get-pip.py
-rm get-pip.py
-
 # CPPPO Correct Version 4.3.4
-sudo pip2 install cpppo==4.3.4
+sudo pip3 install cpppo==4.3.4
 
 # Installing Honeyd - just a copy and paste of the guide
 cd ~
@@ -40,15 +35,15 @@ sudo make install
 
 # MiniCPS
 cd ~
-git clone --depth 1 https://github.com/afmurillo/minicps.git || git -C minicps pull
+git clone --depth 1 https://github.com/scy-phy/minicps.git || git -C minicps pull
 cd minicps
-sudo python2 -m pip install .
+sudo python3 -m pip install .
 
 # Mininet from source
 cd ~
-git clone --depth 1 -b 2.3.1b1 https://github.com/mininet/mininet.git || git -C mininet pull
+git clone --depth 1 -b 2.3.1b4 https://github.com/mininet/mininet.git || git -C mininet pull
 cd mininet
-sudo PYTHON=python2 ./util/install.sh -fnv
+sudo PYTHON=python3 ./util/install.sh -fnv
 
 # Installing Python3 dependencies
 sudo pip3 install Flask-SocketIO==4.3.1
@@ -57,13 +52,11 @@ sudo pip3 install python-socketio==4.6.0
 sudo pip3 install eventlet
 sudo pip3 install gevent
 sudo pip3 install mininet
+sudo pip3 install pandas
 
 # create log and make it modifiable
 touch honeyd.log
 sudo chmod 777 honeyd.log
-
-# Installing Python2 dependencies
-sudo pip2 install pandas
 
 printf "\nInstallation finished.\n"
 exit 0;
