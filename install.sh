@@ -15,7 +15,7 @@ sleep 3
 sudo apt update
 s
 # Installing necessary packages
-sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal mininet dbus-x11
+sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-testcontroller net-tools gnome-terminal mininet dbus-x11 python-is-python3
 
 # Install farpd
 sudo apt install -y farpd
@@ -45,7 +45,7 @@ sudo chmod 777 honeyd.log
 
 # Installing Honeyd - just a copy and paste of the guide
 cd ~
-git clone https://github.com/DataSoft/Honeyd
+https://github.com/FedezT/Honeyd
 cd Honeyd
 sudo apt install -y libevent-dev libdumbnet-dev libpcap-dev libpcre3-dev libedit-dev bison flex libtool automake make zlib1g-dev
 ./autogen.sh

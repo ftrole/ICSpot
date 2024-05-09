@@ -41,7 +41,7 @@ Installation is quite articulated, so brace yourself.
 
     *N.B.*: By default the libsnap7.so refers to Siemens Simatic 300 PLC profile, which according to [HoneyPLC paper](https://dl.acm.org/doi/10.1145/3372297.3423356), is the one with a lower Honeyscore (thus, less likely to be flagged as Honeypot by search engines). To change the emulated PLC model, you have to rename the library of the target model present in `./snap7/build/bin/x86_64-linux/` into `libsnap7.so` and copy/overwrite it in `/usr/lib/libsnap7.so`.
 
-7. Compile and Execute the s7comm server (you can find it [here](./snap7/examples/cpp/x86_64-linux/server) 
+7. Compile and Execute the s7comm server (you can find it [here](./snap7/examples/cpp/x86_64-linux/server))
 
     Compile: `make ./snap7/examples/cpp/server.cpp`  
 
