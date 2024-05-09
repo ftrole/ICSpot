@@ -29,6 +29,7 @@ sudo pip install Flask-SocketIO==4.3.1
 sudo pip install python-engineio==3.13.2
 sudo pip install python-socketio==4.6.0
 sudo pip install flask==1.1.2
+sudo pip install jinja2==2.11.2
 sudo pip install MarkupSafe==1.1.1
 sudo pip install Werkzeug==1.0.1
 sudo pip install itsdangerous==1.1.0
