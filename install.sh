@@ -25,13 +25,13 @@ sudo apt install -y farpd
 sudo pip install cpppo==4.3.4
 sudo pip install pymodbus
 sudo pip install pandas
-sudo pip Flask-SocketIO==4.3.1
-sudo pip python-engineio==3.13.2
-sudo pip python-socketio==4.6.0
-sudo pip flask==1.1.2
-sudo pip MarkupSafe==1.1.1
-sudo pip Werkzeug==1.0.1
-sudo pip itsdangerous==1.1.0
+sudo pip install Flask-SocketIO==4.3.1
+sudo pip install python-engineio==3.13.2
+sudo pip install python-socketio==4.6.0
+sudo pip install flask==1.1.2
+sudo pip install MarkupSafe==1.1.1
+sudo pip install Werkzeug==1.0.1
+sudo pip install itsdangerous==1.1.0
 
 #all other packages
 pip install -r requirements.txt
