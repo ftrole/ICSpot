@@ -27,4 +27,4 @@ for line in logList:
 f.close()
     	        
 os.system('clear')
-print("Analyzed " + str(analyzed) + " log liness)
+print("Analyzed " + str(analyzed) + " log liness")

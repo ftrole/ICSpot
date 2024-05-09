@@ -11,9 +11,9 @@ PYTHON3s = sudo python3
 
 watertower:
 	cd waterTower; $(PYTHON3s) init.py; cd .. 
-	sudo gnome-terminal -- sh -c 'cd waterTower; sudo python3 run.py'
+	sudo gnome-terminal -- sh -c 'cd waterTower; python3 run.py'
 	sleep 5
-	sudo gnome-terminal -- sh -c 'cd waterTower; sudo python3 scada.py; exec bash'
+	sudo gnome-terminal -- sh -c 'cd waterTower; python3 scada.py; exec bash'
 	sleep 5
 	xdg-open http://127.0.0.1:5000/
 

@@ -20,6 +20,26 @@ sudo apt install -y git python3 python3-pip curl libsqlite3-dev openvswitch-test
 # Install farpd
 sudo apt install -y farpd
 
+# Installing Python3 dependencies
+# packages requiring sudo space due to mininet
+sudo pip install cpppo==4.3.4
+sudo pip install pymodbus
+sudo pip install pandas
+sudo pip Flask-SocketIO==4.3.1
+sudo pip python-engineio==3.13.2
+sudo pip python-socketio==4.6.0
+sudo pip flask==1.1.2
+sudo pip MarkupSafe==1.1.1
+sudo pip Werkzeug==1.0.1
+sudo pip itsdangerous==1.1.0
+
+#all other packages
+pip install -r requirements.txt
+
+# create log and make it modifiable
+touch honeyd.log
+sudo chmod 777 honeyd.log
+
 # Installing Honeyd - just a copy and paste of the guide
 cd ~
 git clone https://github.com/DataSoft/Honeyd
@@ -29,13 +49,6 @@ sudo apt install -y libevent-dev libdumbnet-dev libpcap-dev libpcre3-dev libedit
 ./configure
 make
 sudo make install
-
-# Installing Python3 dependencies
-pip install -r requirements.txt
-
-# create log and make it modifiable
-touch honeyd.log
-sudo chmod 777 honeyd.log
 
 printf "\nInstallation finished.\n"
 exit 0;

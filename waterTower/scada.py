@@ -25,7 +25,7 @@ def waterLevels():
     print("Getting waterLevels")
     db = sqlite3.connect('file:swat_s1_db.sqlite?mode=ro', uri=True, timeout=3)
     cursorObj = db.cursor()
-    while not thread_stop_event.isSet():
+    while not thread_stop_event.is_set():
         
         cursorObj.execute('SELECT name, value FROM swat_s1 WHERE name="LIT101"')
         level = cursorObj.fetchall()

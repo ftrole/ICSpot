@@ -27,10 +27,11 @@ class SwatS1CPS(MiniCPS):
         # start devices
         plc0, plc1, plc2, s1 = self.net.get(
             'plc0', 'plc1', 'plc2', 's1')
-
-        plc2.cmd('python2 plc2.py &')
-        plc1.cmd('python2 plc1.py &')
-        s1.cmd('python2 physical_process.py &')
+            
+        # SPHINX_SWAT_TUTORIAL RUN(
+        plc2.cmd(sys.executable + ' -u ' +' plc2.py &> logs/plc2.log &')
+        plc1.cmd(sys.executable + ' -u ' + ' plc1.py  &> logs/plc1.log &')
+        s1.cmd(sys.executable + ' -u ' + ' physical_process.py  &> logs/process.log &')
 
         print("Devices started")
 
