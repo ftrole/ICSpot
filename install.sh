@@ -37,6 +37,8 @@ sudo pip install itsdangerous==1.1.0
 #all other packages
 pip install -r requirements.txt
 
+make clean
+
 # create log and make it modifiable
 touch honeyd.log
 sudo chmod 777 honeyd.log

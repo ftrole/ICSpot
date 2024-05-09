@@ -21,7 +21,7 @@ watertower:
 # CLEAN {{{1
 
 clean:
-	sudo pkill -f -u root $(PYTHON2)" -m cpppo.server.enip"
+	sudo pkill -f -u root $(PYTHON3)" -m cpppo.server.enip"
 	sudo mn -c
 	cd waterTower; sudo rm swat_s1_db.sqlite; sudo rm physical_log.csv; sudo rm -f logs/*.log; sudo rm -f minicps/*.pyc; rm -f minicps/*,cover
 	sudo fuser -k 6653/tcp
