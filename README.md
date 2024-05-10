@@ -12,9 +12,8 @@ The figure above shows the general architecture of our Honeypot and how the diff
 Installation is quite articulated, so brace yourself.
 
 ### Requirements 
-- Operating system: tested on ubuntu 18.04 and 20.04. Currently, the Honeypot was tested on a *non-server* version since the HMI requires a browser to be visualized. Furthermore, some scripts in the physical process span new terminals tabs with the command `gnome-terminal`.
-- Python 2 for Mininet and MiniCPS (installation included in the preconfigured script).
-- Python 3 for the HMI web app (installation included in the preconfigured script).
+- Operating system: tested on Ubuntu 22.04. Currently, the Honeypot was tested on a *non-server* version since the HMI requires a browser to be visualized. Furthermore, some scripts in the physical process span new terminals tabs with the command `gnome-terminal`.
+- Python 3 (installation included in the preconfigured script).
 
 
 ### Installation process
