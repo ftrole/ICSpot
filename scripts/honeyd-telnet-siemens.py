@@ -22,7 +22,7 @@ class TelnetSim:
   incortext = "\n\rLogin incorrect\n\r"
 
   def run(self):
-    sys.stdout.write(struct.pack('BBB', 255, 251, 1))
+    sys.stdout.write(str(struct.pack('BBB', 255, 251, 1)))
     sys.stdout.flush()
     sys.stdout.write(self.logintext)
     sys.stdout.flush()
@@ -40,7 +40,7 @@ class TelnetSim:
             sys.stdout.write("0xc24068 (tTelnetInTask): telnetInTask: interrupt\n\r")
             sys.stdout.flush()
           elif input == 244:	# IP
-	    sys.stdout.write("0xc24068 (tTelnetInTask): telnetInTask: interrupt\n\r")
+            sys.stdout.write("0xc24068 (tTelnetInTask): telnetInTask: interrupt\n\r")
             sys.stdout.flush()
           elif input == 246:	# AYT
             sys.stdout.write("\r\n[yes]\r\n")
@@ -124,4 +124,5 @@ class TelnetSim:
               sys.stdout.flush()
     except:
       sys.exit(1)
+     
 TelnetSim().run()

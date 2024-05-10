@@ -39,32 +39,40 @@ class ModbusSim:
 	
   def parseInput(self):
     """Get the input and send it to the next stage"""
-  	
-  	# Read the first 6 bytes (byte 4 and 5 contain the remaining length)
-    tempQuery = sys.stdin.read(6)
-    if (not(len(tempQuery) < 6)):
-      tempQueryBytes = array.array('B', tempQuery)
-      remainingLength = self.getWord(tempQueryBytes[4], tempQueryBytes[5])
-    	
-    	# Read the remaining bytes
-      rawQuery = tempQuery + sys.stdin.read(remainingLength)
-    	
-      requestBytes = array.array('B', rawQuery)
-    	
-      self.transactionID = self.getWord(requestBytes[0], requestBytes[1])
-      self.protocolID = self.getWord(requestBytes[2], requestBytes[3])
-      self.length = self.getWord(requestBytes[4], requestBytes[5])
-      self.unitID = requestBytes[6]
-      self.functionCode = requestBytes[7]
-      self.data = requestBytes[8:]
-      self.exception = 0
-    	
-      if (self.protocolID != 0):
-        sys.exit(0)
-      else:
-        self.createResponse()
+
+    # Read the first 6 bytes (byte 4 and 5 contain the remaining length)
+    tempQuery = sys.stdin.buffer.read(6)
+    if len(tempQuery) == 6:
+        tempQueryBytes = array.array('B', tempQuery)
+        remainingLength = self.getWord(tempQueryBytes[4], tempQueryBytes[5])
+
+        # Read the remaining bytes
+        remaining_bytes = sys.stdin.buffer.read(remainingLength)
+        rawQuery = tempQuery + remaining_bytes
+
+        requestBytes = array.array('B', rawQuery)
+
+        # Check if requestBytes has enough elements before accessing them
+        if len(requestBytes) >= 8:
+            self.transactionID = self.getWord(requestBytes[0], requestBytes[1])
+            self.protocolID = self.getWord(requestBytes[2], requestBytes[3])
+            self.length = self.getWord(requestBytes[4], requestBytes[5])
+            self.unitID = requestBytes[6]
+            self.functionCode = requestBytes[7]
+            if len(requestBytes) > 8:
+                self.data = requestBytes[8:]
+            else:
+                self.data = b''
+            self.exception = 0
+
+            if self.protocolID != 0:
+                sys.exit(0)
+            else:
+                self.createResponse()
+        else:
+            print("Error: requestBytes does not have enough elements.")
     else:
-      sys.exit(0)
+        print("Error: Could not read 6 bytes from input.")
 	
   def getWord(self, byte0, byte1):
     """Returns the integer value of the combination of two bytes in big endian mode"""
@@ -251,7 +259,7 @@ class ModbusSim:
     response.extend(self.data)
     rawResponse = struct.pack('!HHHBB' + str(self.length - 2) + 'B', *response)
 	
-    sys.stdout.write(rawResponse)
+    sys.stdout.buffer.write(rawResponse)
     sys.stdout.flush()
 
 class ModbusMem:
@@ -261,7 +269,7 @@ class ModbusMem:
     """Constructor. Initializes all bits to zero"""
   	
     self.size = bitSize
-    self.file = file
+    #self.file = file
     self.filename = filename
     try:
       datafile = file(self.filename, 'r')

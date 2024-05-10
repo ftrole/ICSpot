@@ -154,7 +154,7 @@ class SNMPOBJECT(BERHEADER):
             raise TypeError('Comparation method not provided for %s'\
                             % self.__class__.__name)
 
-        except StandardError, why:
+        except StandardError(why):
             raise TypeError('Cannot compare %s vs %s: %s'\
                             % (str(self), str(other), why))
 
@@ -169,14 +169,14 @@ class SNMPOBJECT(BERHEADER):
         try:
             return self._encode()
 
-        except AttributeError, why:
+        except AttributeError(why):
             raise TypeError('No encoder defined for %s object' %\
                             self.__class__.__name__)
 
-        except KeyError, why:
+        except KeyError(why):
             raise TypeError('Missing mandatory parameter: %s' % why)
     
-        except StandardError, why:
+        except StandardError(why):
             raise BadArgument('Encoder failure (bad input?): ' + str(why))
             
     def decode(self, input):
@@ -191,11 +191,11 @@ class SNMPOBJECT(BERHEADER):
         try:
             return self._decode(input)
         
-        except AttributeError, why:
+        except AttributeError(why):
             raise TypeError('No decoder defined for %s object' %\
                             self.__class__.__name__)
 
-        except StandardError, why:
+        except StandardError(why):
             raise BadArgument('Decoder failure (bad input?): ' + str(why))
 
     #
@@ -275,7 +275,7 @@ class SNMPOBJECT(BERHEADER):
                 raise TypeError('No copy method defined for %s object' %\
                                 self.__class__.__name__)
         
-        except StandardError, why:
+        except StandardError(why):
             raise TypeError('Cannot copy %s from %s: %s'\
                             % (str(self), str(other), why))
         
@@ -830,14 +830,14 @@ def decode(input):
         # Probe PDU
         tag = BERHEADER().decode_tag(ord(pdu[0]))
 
-    except StandardError, why:
+    except StandardError(why):
         raise BadEncoding('Decoder failure (bad input?): ' + str(why))
 
     try:
         # Create request object of matching type
         msg = eval(tag[:-4]+'()')
 
-    except NameError, why:
+    except NameError(why):
         raise BadPDUType('Unsuppored SNMP PDU type: ' + str(why))
 
     # Decode request
